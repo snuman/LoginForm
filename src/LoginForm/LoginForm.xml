@@ -49,6 +49,20 @@
             <category>Display</category>
             <description>Login button caption</description>
         </property>
+        <property key="loginButtonStyle" type="enumeration" defaultValue="Default">
+            <caption>Login Button Style</caption>
+            <category>Display</category>
+            <description>The bootstrap style to apply</description>
+            <enumerationValues>
+                <enumerationValue key="Default">Default</enumerationValue>
+                <enumerationValue key="Inverse">Inverse</enumerationValue>
+                <enumerationValue key="Primary">Primary</enumerationValue>
+                <enumerationValue key="Info">Info</enumerationValue>
+                <enumerationValue key="Success">Success</enumerationValue>
+                <enumerationValue key="Warning">Warning</enumerationValue>
+                <enumerationValue key="Danger">Danger</enumerationValue>
+            </enumerationValues>
+        </property>
         <property key="emptytext" type="string" required="false" defaultValue="No username or password given">
             <caption>Empty Username or Password Text</caption>
             <category>Display</category>
@@ -58,6 +72,11 @@
             <caption>Forgot Password Link Text</caption>
             <category>Display</category>
             <description>Text in Forgot Password link</description>
+        </property>
+        <property key="forgotclass" type="string" required="false" defaultValue="">
+            <caption>Forgot Password Class</caption>
+            <category>Display</category>
+            <description>Class to append to forgot password link</description>
         </property>
         <property key="showprogress" type="boolean" defaultValue="false">
             <caption>Show Progress Bar</caption>

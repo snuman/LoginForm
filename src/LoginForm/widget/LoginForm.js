@@ -58,9 +58,11 @@ define([
         userexample: "Username",
         passexample: "Password",
         logintext: "Login",
+        loginButtonStyle: "Default",
         progresstext: "",
         emptytext: "No username or password given",
         forgottext: "Forgot your password?",
+        forgotclass: "",
         showLabels: false,
         usernameLabel: "User name",
         passwordLabel: "Password",
@@ -121,6 +123,7 @@ define([
         _updateRendering: function () {
             logger.debug(this.id + "._updateRendering");
             domClass.add(this.alertMessageNode, "hidden");
+            this._styleLoginButton();
             this._addMobileOptions();
             this._showLabels();
             // Check if user wants to display the show-password toggle
@@ -190,6 +193,7 @@ define([
         _forgotPasswordLink: function () {
             if (this.forgotmf) {
                 dojoHtml.set(this.forgotPasswordLinkNode, this.forgottext);
+                this._styleForgotPassword();
             } else {
                 domClass.add(this.forgotPasswordNode, "hidden");
             }
@@ -381,7 +385,24 @@ define([
                 domClass.remove(this.usernameLabelNode, "hidden");
                 domClass.remove(this.passwordLabelNode, "hidden");
             }
-        }
+        },
+        
+        /**
+         * Handles login button styles
+         * @private
+         */
+        _styleLoginButton: function () {
+           domClass.add(this.submitButtonNode, "btn-" + this.loginButtonStyle.toLowerCase());
+        },
+        /**
+         * Handles forgotpassword classes
+         * @private
+         */
+        _styleForgotPassword: function () {
+            if (this.forgotclass) {
+                domClass.add(this.forgotPasswordNode, this.forgotclass);
+            }
+        },
     });
 });
 
